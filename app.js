@@ -1,41 +1,171 @@
 (()=>{
-const raw=[
-['Vogue','https://www.vogue.com/fashion/','ICONS','US','wx','editorial runway luxury'],['Vogue Runway','https://www.vogue.com/fashion-shows','ICONS','Global','mwx','runway menswear womenswear'],['GQ','https://www.gq.com/style','ICONS','US','m','menswear editorial culture'],['Harper’s Bazaar','https://www.harpersbazaar.com/fashion/','ICONS','US','wx','womenswear editorial runway'],['ELLE','https://www.elle.com/fashion/','ICONS','US','wx','womenswear editorial street-style'],['Esquire','https://www.esquire.com/style/','ICONS','US','m','menswear editorial culture'],['W Magazine','https://www.wmagazine.com/fashion','ICONS','US','wx','editorial photography luxury'],['Vanity Fair','https://www.vanityfair.com/style','ICONS','US','mwx','culture editorial luxury'],
-['Dazed','https://www.dazeddigital.com/fashion','AUTHORITIES','UK','mwx','avant-garde editorial culture street-style'],['i-D','https://i-d.co/category/fashion/','AUTHORITIES','UK','mwx','editorial photography street-style culture'],['The Face','https://theface.com/style','AUTHORITIES','UK','mwx','street-style culture editorial'],['AnOther','https://www.anothermag.com/fashion-beauty','AUTHORITIES','UK','wx','editorial photography avant-garde'],['Interview','https://www.interviewmagazine.com/fashion','AUTHORITIES','US','mwx','culture editorial photography'],['V Magazine','https://vmagazine.com/category/fashion/','AUTHORITIES','US','wx','editorial photography runway'],['CR Fashion Book','https://crfashionbook.com/','AUTHORITIES','Global','wx','editorial luxury photography'],['L’Officiel','https://www.lofficielusa.com/fashion','AUTHORITIES','France','wx','editorial runway luxury'],['Numéro','https://numero.com/fashion/','AUTHORITIES','France','wx','editorial photography avant-garde'],['Document Journal','https://www.documentjournal.com/category/fashion/','AUTHORITIES','US','mwx','editorial culture avant-garde'],['10 Magazine','https://10magazine.com/','AUTHORITIES','UK','mwx','editorial runway luxury'],['Wonderland','https://www.wonderlandmagazine.com/fashion/','AUTHORITIES','UK','mwx','editorial culture emerging-designers'],['Schön!','https://schonmagazine.com/category/fashion/','AUTHORITIES','Germany','mwx','editorial photography emerging-designers'],['Highsnobiety','https://www.highsnobiety.com/style/','AUTHORITIES','Germany','mwx','streetwear menswear culture luxury'],['Hypebeast','https://hypebeast.com/fashion','AUTHORITIES','Global','mx','streetwear menswear runway culture'],['The Business of Fashion','https://www.businessoffashion.com/','AUTHORITIES','Global','mwx','industry culture luxury'],['Wallpaper*','https://www.wallpaper.com/fashion','AUTHORITIES','UK','mwx','design luxury editorial'],['The Cut','https://www.thecut.com/fashion/','AUTHORITIES','US','wx','womenswear culture editorial'],
-['032c','https://032c.com/magazine','INDEPENDENT','Germany','mwx','avant-garde culture editorial'],['Purple Fashion','https://purple.fr/','INDEPENDENT','France','mwx','avant-garde editorial photography'],['System Magazine','https://system-magazine.com/','INDEPENDENT','UK','mwx','industry culture editorial'],['Fantastic Man','https://www.fantasticman.com/','INDEPENDENT','Europe','m','menswear editorial culture'],['HERO','https://hero-magazine.com/','INDEPENDENT','UK','m','menswear editorial culture'],['Man About Town','https://manabouttown.tv/','INDEPENDENT','UK','m','menswear editorial photography'],['Office Magazine','https://officemagazine.net/fashion','INDEPENDENT','US','mwx','culture street-style editorial'],['The Gentlewoman','https://thegentlewoman.co.uk/','INDEPENDENT','UK','w','womenswear editorial culture'],['Self Service','https://selfservicemagazine.com/','INDEPENDENT','France','wx','editorial photography avant-garde'],['NSS Magazine','https://www.nssmag.com/en/fashion','INDEPENDENT','Italy','mwx','streetwear culture fashion'],['Fucking Young!','https://fuckingyoung.es/','INDEPENDENT','Europe','m','menswear editorial runway'],['Complex Style','https://www.complex.com/style','INDEPENDENT','US','mx','streetwear sneakers culture'],['A Magazine Curated By','https://amagazinecuratedby.com/','INDEPENDENT','Europe','mwx','designer editorial avant-garde'],
-['Vogue Italia','https://www.vogue.it/moda','DISCOVERY','Italy','wx','editorial runway photography'],['Vogue France','https://www.vogue.fr/mode','DISCOVERY','France','wx','editorial runway luxury'],['British Vogue','https://www.vogue.co.uk/fashion','DISCOVERY','UK','wx','editorial runway culture'],['Vogue Japan','https://www.vogue.co.jp/fashion','DISCOVERY','Japan','wx','editorial street-style runway'],['Vogue Korea','https://www.vogue.co.kr/category/fashion/','DISCOVERY','Korea','wx','editorial runway culture'],['Vogue México y Latinoamérica','https://www.vogue.mx/moda','DISCOVERY','Latin America','wx','editorial culture runway'],['GQ Italia','https://www.gqitalia.it/fashion','DISCOVERY','Italy','m','menswear editorial runway'],['GQ France','https://www.gqmagazine.fr/style','DISCOVERY','France','m','menswear editorial culture'],['GQ Japan','https://www.gqjapan.jp/fashion','DISCOVERY','Japan','m','menswear editorial street-style'],['GQ Korea','https://www.gqkorea.co.kr/category/fashion/','DISCOVERY','Korea','m','menswear editorial street-style'],['GQ México','https://www.gq.com.mx/moda','DISCOVERY','Latin America','m','menswear editorial culture'],['Numéro TOKYO','https://numero.jp/','DISCOVERY','Japan','wx','editorial culture photography'],['MEN’S NON-NO','https://www.mensnonno.jp/','DISCOVERY','Japan','m','menswear street-style editorial'],['POPEYE','https://popeyemagazine.jp/','DISCOVERY','Japan','m','menswear culture street-style'],['UOMO Japan','https://www.webuomo.jp/','DISCOVERY','Japan','m','menswear luxury street-style'],['FUDGE','https://fudge.jp/','DISCOVERY','Japan','wx','womenswear street-style editorial'],['GINZA','https://ginzamag.com/','DISCOVERY','Japan','wx','womenswear culture editorial'],['W Korea','https://www.wkorea.com/category/fashion/','DISCOVERY','Korea','wx','editorial photography culture'],['Dazed Korea','https://www.dazedkorea.com/','DISCOVERY','Korea','mwx','culture street-style editorial'],['Arena Homme+ Korea','https://www.arenakorea.com/','DISCOVERY','Korea','m','menswear editorial photography'],['EYESMAG','https://www.eyesmag.com/','DISCOVERY','Korea','mwx','streetwear culture design'],['Vogue Australia','https://www.vogue.com.au/fashion','DISCOVERY','Oceania','wx','editorial runway culture'],['Vogue India','https://www.vogue.in/fashion','DISCOVERY','Asia','wx','editorial culture runway'],['Vogue Arabia','https://www.voguearabia.com/fashion','DISCOVERY','Middle East','wx','editorial luxury culture'],['Vogue Scandinavia','https://www.voguescandinavia.com/categories/fashion','DISCOVERY','Scandinavia','wx','editorial culture sustainability'],['Vogue España','https://www.vogue.es/moda','DISCOVERY','Europe','wx','editorial runway luxury'],['Vogue Germany','https://www.vogue.de/mode','DISCOVERY','Europe','wx','editorial runway culture']
-];
-const A={m:['men'],w:['women'],x:['mixed'],mw:['men','women'],mx:['men','mixed'],wx:['women','mixed'],mwx:['men','women','mixed']};
-const pubs=raw.map((r,i)=>({id:'p'+i,name:r[0],url:r[1],tier:r[2],region:r[3],audience:A[r[4]],tags:r[5].split(' '),influence:100-i*.45,descriptor:r[5].split(' ').map(x=>x.replace('-',' ')).slice(0,3).join(' • ')}));
-const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
-const R=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},W=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
-let fav=new Set(R('fi:fav',[])),rec=R('fi:rec',[]),notes=R('fi:notes',{}),aud=R('fi:aud','all'),tag=null,compact=false,deferred=null;
-const toast=m=>{let t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)};
-const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
-const openPub=p=>{rec=[p.id,...rec.filter(x=>x!==p.id)].slice(0,20);W('fi:rec',rec);renderRecents();window.open(p.url,'_blank','noopener')};
-function card(p){let e=document.createElement('article');e.className='pub-card tier-'+p.tier;e.innerHTML=`<div class="card-top"><span class="tier-label">${p.tier}</span><div class="card-actions"><button class="note-btn ${notes[p.id]?'active':''}">✎</button><button class="fav-btn ${fav.has(p.id)?'active':''}">★</button></div></div><h3>${esc(p.name)}</h3><p>${esc(p.descriptor)}</p><div class="card-meta"><span class="chip">${esc(p.region)}</span>${p.audience.map(x=>`<span class="chip audience-badge">${x.toUpperCase()}</span>`).join('')}${p.tags.slice(0,2).map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div><span class="launch">↗</span>`;e.onclick=x=>{if(!x.target.closest('button'))openPub(p)};$('.fav-btn',e).onclick=x=>{x.stopPropagation();fav.has(p.id)?fav.delete(p.id):fav.add(p.id);W('fi:fav',[...fav]);renderAll();toast(fav.has(p.id)?'Saved':'Removed')};$('.note-btn',e).onclick=x=>{x.stopPropagation();$('#notePubId').value=p.id;$('#noteTitle').textContent=p.name;$('#noteText').value=notes[p.id]||'';$('#noteDialog').showModal()};return e}
-const fill=(el,list)=>{el.innerHTML='';list.forEach(p=>el.appendChild(card(p)))};
-function nav(n){['home','explore','favorites','about'].forEach(x=>$('#'+x+'View').classList.toggle('active',x===n));$$('[data-nav]').forEach(b=>b.classList.toggle('active',b.dataset.nav===n));if(n==='explore')renderExplore();if(n==='favorites')renderFav();scrollTo(0,0)}
-$$('[data-nav]').forEach(b=>b.onclick=()=>nav(b.dataset.nav));
-function renderTabs(){$$('[data-audience-filter]').forEach(b=>b.classList.toggle('active',b.dataset.audienceFilter===aud))}
-$$('[data-audience-filter]').forEach(b=>b.onclick=()=>{aud=b.dataset.audienceFilter;W('fi:aud',aud);renderTabs();renderExplore()});$$('.audience-tile').forEach(b=>b.onclick=()=>{aud=b.dataset.audience;W('fi:aud',aud);renderTabs();nav('explore')});
-const quick=['menswear','womenswear','runway','editorial','photography','street-style','avant-garde','streetwear','Japan','Korea','Latin America'];quick.forEach(q=>{let b=document.createElement('button');b.textContent=q.toUpperCase();b.onclick=()=>{tag=tag===q?null:q;renderExplore();$$('#quickChips button').forEach(x=>x.classList.toggle('active',x===b))};$('#quickChips').appendChild(b)});
-[...new Set(pubs.map(p=>p.region))].sort().forEach(r=>$('#regionFilter').insertAdjacentHTML('beforeend',`<option>${r}</option>`));
-function filtered(){let q=$('#searchInput').value.toLowerCase(),t=$('#tierFilter').value,r=$('#regionFilter').value;return pubs.filter(p=>(aud==='all'||p.audience.includes(aud))&&(t==='all'||p.tier===t)&&(r==='all'||p.region===r)&&(!tag||(p.region===tag||p.tags.includes(tag)))&&(!q||[p.name,p.region,...p.tags].join(' ').toLowerCase().includes(q)))}
-function renderExplore(){let l=filtered(),s=$('#sortFilter').value;if(s==='az')l.sort((a,b)=>a.name.localeCompare(b.name));if(s==='favorites')l.sort((a,b)=>Number(fav.has(b.id))-Number(fav.has(a.id)));$('#resultCount').textContent=l.length+' TITLES';fill($('#exploreGrid'),l);$('#exploreGrid').classList.toggle('compact',compact);$('#emptyState').classList.toggle('hidden',!!l.length)}
-['searchInput','tierFilter','regionFilter','sortFilter'].forEach(id=>$('#'+id).addEventListener(id==='searchInput'?'input':'change',renderExplore));$('#resetFilters').onclick=()=>{$('#searchInput').value='';$('#tierFilter').value='all';$('#regionFilter').value='all';$('#sortFilter').value='curated';tag=null;renderExplore()};$('#viewToggle').onclick=()=>{compact=!compact;$('#viewToggle').textContent=compact?'ART GRID':'COMPACT VIEW';renderExplore()};
-function renderFav(){let l=pubs.filter(p=>fav.has(p.id));fill($('#favoritesGrid'),l);$('#favoritesEmpty').classList.toggle('hidden',!!l.length);renderNotes()}
-$('#clearFavorites').onclick=()=>{if(confirm('Clear all saved publications?')){fav.clear();W('fi:fav',[]);renderFav()}};
-function renderNotes(){let g=$('#notesGrid'),entries=Object.entries(notes).filter(([,v])=>v);g.innerHTML='';$('#notesSection').classList.toggle('hidden',!entries.length);entries.forEach(([id,txt])=>{let p=pubs.find(x=>x.id===id);if(!p)return;let a=document.createElement('article');a.className='note-card';a.innerHTML=`<small>${p.region}</small><h4>${esc(p.name)}</h4><p>${esc(txt)}</p><div><button class="mini-btn">OPEN ↗</button></div>`;$('button',a).onclick=()=>openPub(p);g.appendChild(a)})}
-$('#noteForm').onsubmit=e=>{e.preventDefault();let id=$('#notePubId').value,v=$('#noteText').value.trim();v?notes[id]=v:delete notes[id];W('fi:notes',notes);$('#noteDialog').close();renderAll()};$('#deleteNote').onclick=()=>{let id=$('#notePubId').value;delete notes[id];W('fi:notes',notes);$('#noteDialog').close();renderAll()};$('#clearNotes').onclick=()=>{notes={};W('fi:notes',notes);renderNotes()};
-function renderRecents(){let l=rec.map(id=>pubs.find(p=>p.id===id)).filter(Boolean).slice(0,8),s=$('#recentStrip');s.innerHTML='';$('#recentSection').classList.toggle('hidden',!l.length);l.forEach(p=>{let b=document.createElement('button');b.className='recent-item';b.innerHTML=`<small>${p.region}</small><b>${esc(p.name)}</b><small>OPEN ↗</small>`;b.onclick=()=>openPub(p);s.appendChild(b)})}$('#clearRecents').onclick=()=>{rec=[];W('fi:rec',rec);renderRecents()};
-const routes=[['MODERN MENSWEAR','men','menswear'],['TOKYO ↔ SEOUL','all','Japan'],['AVANT / CULT','all','avant-garde'],['IMAGE MAKERS','all','photography'],['STREET SIGNAL','all','streetwear'],['RUNWAY NOW','all','runway'],['NEW WOMAN','women','womenswear'],['LATIN EDIT','all','Latin America']];routes.forEach((r,i)=>{let b=document.createElement('button');b.className='curated-route route-'+['yellow','blue','red','green','orange','cream','pink','purple'][i];b.innerHTML=`<span>0${i+1}</span><strong>${r[0]}</strong><p>Curated route through ${r[2].replace('-',' ')}.</p><em>ENTER ROUTE ↗</em>`;b.onclick=()=>{aud=r[1];tag=r[2];renderTabs();nav('explore')};$('#curatedRoutes').appendChild(b)});
-[['PARIS','France'],['MILAN','Italy'],['LONDON','UK'],['NEW YORK','US'],['TOKYO','Japan'],['SEOUL','Korea'],['LATIN AMERICA','Latin America']].forEach((c,i)=>{let b=document.createElement('button');b.className='city-card';b.innerHTML=`<span>0${i+1}</span><b>${c[0]}</b><small>${c[1]}</small><em>↗</em>`;b.onclick=()=>{$('#regionFilter').value=c[1];nav('explore')};$('#cityRail').appendChild(b)});
-function daily(){let d=new Date().getDate(),l=[...pubs].sort((a,b)=>((a.id.charCodeAt(1)+d)%17)-((b.id.charCodeAt(1)+d)%17)||b.influence-a.influence).slice(0,4);fill($('#dailyEditGrid'),l)}$('#refreshDaily').onclick=daily;
-$('#surpriseBtn').onclick=()=>openPub(pubs[Math.floor(Math.random()*pubs.length)]);
-$('#suggestBtn').onclick=()=>$('#suggestDialog').showModal();$('#suggestForm').onsubmit=e=>{e.preventDefault();$('#suggestSuccess').classList.remove('hidden');setTimeout(()=>$('#suggestDialog').close(),700)};
-['tasteBtn','editTasteInline','aboutTasteBtn'].forEach(id=>$('#'+id)&&($('#'+id).onclick=()=>$('#tasteDialog').showModal()));$('#tasteForm').onsubmit=e=>{e.preventDefault();$('#tasteDialog').close();toast('Taste saved on this device')};
-let ios=/iphone|ipad|ipod/i.test(navigator.userAgent);window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e});$('#installBtn').onclick=async()=>{if(deferred){deferred.prompt();await deferred.userChoice;deferred=null}else{toast(ios?'Safari → Share → Add to Home Screen':'Browser menu → Install app / Add to Home screen')}};
-if('serviceWorker'in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));
-function renderAll(){renderTabs();renderExplore();renderFav();renderRecents();daily();fill($('#featuredGrid'),[...pubs].sort((a,b)=>b.influence-a.influence).slice(0,8));$('#statTitles').textContent=pubs.length;$('#statRegions').textContent=new Set(pubs.map(p=>p.region)).size}renderAll();
+  const publications = Array.isArray(window.FASHION_PUBLICATIONS) ? window.FASHION_PUBLICATIONS : [];
+  const influenceOrder = [
+    'Vogue','Vogue Runway','GQ','Dazed','i-D',"Harper's Bazaar",'ELLE','The Business of Fashion','WWD','Highsnobiety','Hypebeast','W Magazine','The Face','AnOther','032c','System','Fantastic Man','The Gentlewoman','Vogue Italia','Vogue France','British Vogue','Vogue Japan','GQ Japan','CR Fashion Book','Interview Magazine','Self Service','Purple Fashion','SSENSE Editorial','MR PORTER Journal','Vogue Business','10 Magazine','Document Journal','V Magazine','The Cut','NSS Magazine','SHOWstudio','A Magazine Curated By','KALEIDOSCOPE','Vogue Korea','GQ Korea','W Korea','Vogue México y Latinoamérica','GQ México','Vogue Scandinavia','Vogue Arabia','Vogue India','Vogue Australia','Vogue China','The Impression','FashionNetwork'
+  ];
+  const priority = pub => { const i = influenceOrder.indexOf(pub.name); return i >= 0 ? i + 1 : 1000 + pub.rank; };
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const read = (key, fallback) => { try { const v = JSON.parse(localStorage.getItem(key)); return v ?? fallback; } catch { return fallback; } };
+  const write = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} };
+
+  let saved = new Set(read('fi:saved', read('fi:fav', [])));
+  let audience = 'all';
+  let currentView = 'home';
+  let deferredInstall = null;
+
+  const toast = message => {
+    const el = $('#toast');
+    el.textContent = message;
+    el.classList.add('show');
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => el.classList.remove('show'), 1500);
+  };
+
+  const setView = view => {
+    if (!['home','browse','saved'].includes(view)) view = 'home';
+    currentView = view;
+    $$('.view').forEach(v => v.classList.toggle('active', v.id === `${view}View`));
+    $$('[data-nav]').forEach(b => b.classList.toggle('active', b.dataset.nav === view));
+    if (view === 'browse') renderBrowse();
+    if (view === 'saved') renderSaved();
+    const url = new URL(location.href);
+    if (view === 'home') url.searchParams.delete('view'); else url.searchParams.set('view', view);
+    history.replaceState(null, '', url);
+    scrollTo({top:0, behavior:'smooth'});
+  };
+
+  const openPublication = pub => {
+    if (!pub?.url) return;
+    window.open(pub.url, '_blank', 'noopener,noreferrer');
+  };
+
+  const toggleSaved = pub => {
+    if (saved.has(pub.id)) saved.delete(pub.id); else saved.add(pub.id);
+    write('fi:saved', [...saved]);
+    renderBrowse();
+    renderSaved();
+    renderEssentials();
+    toast(saved.has(pub.id) ? 'SAVED' : 'REMOVED');
+  };
+
+  const card = pub => {
+    const article = document.createElement('article');
+    article.className = `mag-card${priority(pub) <= 12 ? ' essential' : ''}`;
+    article.tabIndex = 0;
+    article.setAttribute('role','link');
+    article.setAttribute('aria-label', `Open ${pub.name}`);
+    article.innerHTML = `<div class="mag-top"><span class="mag-kicker">${esc(pub.region)} · ${esc(pub.type)}</span><button class="save-btn ${saved.has(pub.id) ? 'active' : ''}" aria-label="${saved.has(pub.id) ? 'Remove from saved' : 'Save publication'}">★</button></div><h3>${esc(pub.name)}</h3><div class="mag-meta"><span class="tag">${esc(pub.audience)}</span></div><span class="open-label">↗</span>`;
+    article.addEventListener('click', e => { if (!e.target.closest('.save-btn')) openPublication(pub); });
+    article.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('.save-btn')) { e.preventDefault(); openPublication(pub); } });
+    $('.save-btn', article).addEventListener('click', e => { e.stopPropagation(); toggleSaved(pub); });
+    return article;
+  };
+
+  const fillGrid = (el, list) => el.replaceChildren(...list.map(card));
+  const renderEssentials = () => fillGrid($('#essentialGrid'), [...publications].sort((a,b)=>priority(a)-priority(b)).slice(0,12));
+  const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+
+  const getFiltered = () => {
+    const query = normalize($('#searchInput').value.trim());
+    const region = $('#regionFilter').value;
+    const type = $('#typeFilter').value;
+    const sort = $('#sortFilter').value;
+    let list = publications.filter(p => {
+      const audienceOk = audience === 'all' || p.audience === audience;
+      const regionOk = region === 'all' || p.region === region;
+      const typeOk = type === 'all' || p.type === type;
+      const queryOk = !query || normalize(`${p.name} ${p.region} ${p.type} ${p.audience}`).includes(query);
+      return audienceOk && regionOk && typeOk && queryOk;
+    });
+    if (sort === 'az') list.sort((a,b) => a.name.localeCompare(b.name));
+    else if (sort === 'saved') list.sort((a,b) => Number(saved.has(b.id)) - Number(saved.has(a.id)) || priority(a) - priority(b));
+    else list.sort((a,b) => priority(a) - priority(b));
+    return list;
+  };
+
+  const updateFilterBadge = () => {
+    let count = 0;
+    if (audience !== 'all') count++;
+    if ($('#regionFilter').value !== 'all') count++;
+    if ($('#typeFilter').value !== 'all') count++;
+    if ($('#sortFilter').value !== 'rank') count++;
+    $('#filterBadge').textContent = count ? `${count} ACTIVE` : '';
+  };
+
+  const renderBrowse = () => {
+    const list = getFiltered();
+    $('#resultCount').textContent = list.length;
+    fillGrid($('#magazineGrid'), list);
+    $('#emptyState').classList.toggle('hidden', list.length > 0);
+    $$('[data-audience]').forEach(b => b.classList.toggle('active', b.dataset.audience === audience));
+    updateFilterBadge();
+  };
+
+  const renderSaved = () => {
+    const list = publications.filter(p => saved.has(p.id)).sort((a,b)=>priority(a)-priority(b));
+    $('#savedCount').textContent = list.length;
+    fillGrid($('#savedGrid'), list);
+    $('#savedEmpty').classList.toggle('hidden', list.length > 0);
+  };
+
+  const resetFilters = () => {
+    audience = 'all';
+    $('#searchInput').value = '';
+    $('#regionFilter').value = 'all';
+    $('#typeFilter').value = 'all';
+    $('#sortFilter').value = 'rank';
+    renderBrowse();
+  };
+
+  const populateFilters = () => {
+    [...new Set(publications.map(p => p.region))].sort().forEach(region => { const option = document.createElement('option'); option.value = option.textContent = region; $('#regionFilter').append(option); });
+    [...new Set(publications.map(p => p.type))].sort().forEach(type => { const option = document.createElement('option'); option.value = option.textContent = type; $('#typeFilter').append(option); });
+  };
+
+  const setupInstall = () => {
+    const dialog = $('#installDialog');
+    const instructions = $('#installInstructions');
+    const nativeBtn = $('#nativeInstallBtn');
+    const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+    const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    const isAndroid = /android/i.test(navigator.userAgent);
+    if (standalone) $('#installBtn').textContent = 'INSTALLED';
+    window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredInstall = e; if (!standalone) $('#installBtn').textContent = 'INSTALL'; });
+    $('#installBtn').addEventListener('click', () => {
+      if (standalone) { toast('ALREADY INSTALLED'); return; }
+      if (deferredInstall) { instructions.innerHTML = '<p>FASHION INDEX can be installed as an app on this device.</p>'; nativeBtn.classList.remove('hidden'); }
+      else if (isiOS) { instructions.innerHTML = '<p>In Safari:</p><ol><li>Tap <b>Share</b>.</li><li>Choose <b>Add to Home Screen</b>.</li><li>Tap <b>Add</b>.</li></ol>'; nativeBtn.classList.add('hidden'); }
+      else if (isAndroid) { instructions.innerHTML = '<p>Open the browser menu and choose <b>Install app</b> or <b>Add to Home screen</b>. If it does not appear, reload once and try again.</p>'; nativeBtn.classList.add('hidden'); }
+      else { instructions.innerHTML = '<p>Use your browser menu and choose <b>Install FASHION INDEX</b> or <b>Create shortcut</b>.</p>'; nativeBtn.classList.add('hidden'); }
+      dialog.showModal();
+    });
+    nativeBtn.addEventListener('click', async () => { if (!deferredInstall) return; dialog.close(); deferredInstall.prompt(); await deferredInstall.userChoice; deferredInstall = null; });
+    $('#closeInstall').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+  };
+
+  const setupEvents = () => {
+    $$('[data-nav]').forEach(b => b.addEventListener('click', () => setView(b.dataset.nav)));
+    $$('[data-home-audience]').forEach(b => b.addEventListener('click', () => { audience = b.dataset.homeAudience; setView('browse'); }));
+    $$('[data-audience]').forEach(b => b.addEventListener('click', () => { audience = b.dataset.audience; renderBrowse(); }));
+    $('#searchInput').addEventListener('input', renderBrowse);
+    $('#clearSearch').addEventListener('click', () => { $('#searchInput').value = ''; renderBrowse(); $('#searchInput').focus(); });
+    ['regionFilter','typeFilter','sortFilter'].forEach(id => $('#'+id).addEventListener('change', renderBrowse));
+    $('#resetFilters').addEventListener('click', resetFilters);
+    $('#emptyReset').addEventListener('click', resetFilters);
+    $('#randomBtn').addEventListener('click', () => { const pool = currentView === 'browse' ? getFiltered() : publications.slice(0,190); if (!pool.length) return toast('NO TITLES IN THIS FILTER'); openPublication(pool[Math.floor(Math.random()*pool.length)]); });
+  };
+
+  const init = () => {
+    populateFilters(); setupEvents(); setupInstall();
+    $('#titleCount').textContent = publications.length;
+    $('#regionCount').textContent = new Set(publications.map(p => p.region)).size;
+    renderEssentials(); renderSaved(); renderBrowse();
+    const view = new URL(location.href).searchParams.get('view');
+    setView(view === 'explore' ? 'browse' : view === 'favorites' ? 'saved' : view || 'home');
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+  };
+  init();
 })();
