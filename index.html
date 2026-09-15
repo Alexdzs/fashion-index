@@ -3,191 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#1914ff" />
-  <meta name="description" content="FASHION INDEX — the world’s fashion press, one tap away." />
+  <meta name="theme-color" content="#211cff" />
+  <meta name="description" content="FASHION INDEX. The world's fashion press, one tap away." />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="FASHION INDEX" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
-  <link rel="stylesheet" href="./styles.css" />
   <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
   <title>FASHION INDEX</title>
 </head>
 <body>
-  <div class="art-layer" aria-hidden="true">
-    <div class="shape shape-a"></div><div class="shape shape-b"></div><div class="shape shape-c"></div><div class="shape shape-d"></div>
-    <div class="grain"></div><div class="crop crop-a">+</div><div class="crop crop-b">+</div>
-  </div>
-
-  <header class="topbar">
-    <button class="wordmark" data-nav="home" aria-label="Go home">FI<span>•</span></button>
-    <div class="top-actions">
-      <button id="tasteBtn" class="mini-btn taste-btn">TASTE PROFILE</button>
-      <button id="surpriseBtn" class="mini-btn">SURPRISE ME ↗</button>
-      <button id="installBtn" class="mini-btn invert">INSTALL APP</button>
-    </div>
-  </header>
-
-  <main id="app">
+  <div class="art-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+  <header class="topbar"><button class="brand" data-nav="home" aria-label="Home">FI<span>•</span></button><div class="topbar-actions"><button id="randomBtn" class="small-button">RANDOM ↗</button><button id="installBtn" class="small-button dark">INSTALL</button></div></header>
+  <main>
     <section id="homeView" class="view active">
-      <section class="hero">
-        <div class="hero-kicker">CURATED GLOBAL FASHION DIRECTORY / VOL. 02</div>
-        <h1>FASHION<br><span>INDEX</span></h1>
-        <p>The world’s fashion press, one tap away.</p>
-        <div class="hero-stats" aria-label="Directory statistics">
-          <span><b id="statTitles">00</b> TITLES</span>
-          <span><b id="statRegions">00</b> REGIONS</span>
-          <span><b>01</b> TAP</span>
-        </div>
-        <div class="scribble" aria-hidden="true"></div>
-      </section>
-
-      <section class="audience-section">
-        <div class="section-head"><span>01</span><h2>CHOOSE YOUR LENS</h2></div>
-        <div id="audienceHero" class="audience-hero">
-          <button class="audience-tile men" data-audience="men"><small>STYLE / MENSWEAR</small><strong>MEN</strong><em>↗</em></button>
-          <button class="audience-tile women" data-audience="women"><small>FASHION / EDITORIAL</small><strong>WOMEN</strong><em>↗</em></button>
-          <button class="audience-tile mixed" data-audience="mixed"><small>CULTURE / CROSSOVER</small><strong>MIXED</strong><em>↗</em></button>
-        </div>
-      </section>
-
-      <section class="daily-edit-section">
-        <div class="section-head"><span>02</span><h2>TODAY’S EDIT</h2><button id="refreshDaily" class="text-btn">RESHUFFLE ↻</button></div>
-        <div class="daily-intro">
-          <p>A small daily cut through the noise. Your edit tilts toward the taste profile saved on this device.</p>
-          <button id="editTasteInline" class="link-pill">EDIT MY TASTE →</button>
-        </div>
-        <div id="dailyEditGrid" class="publication-grid daily-grid"></div>
-      </section>
-
-      <section class="route-section curated-routes-section">
-        <div class="section-head"><span>03</span><h2>CURATED ROUTES</h2></div>
-        <p class="section-deck">Don’t know where to start? Pick a point of view, not a platform.</p>
-        <div id="curatedRoutes" class="curated-routes"></div>
-      </section>
-
-      <section class="feature-section">
-        <div class="section-head"><span>04</span><h2>START HERE</h2><button class="text-btn" data-nav="explore">SEE ALL →</button></div>
-        <div id="featuredGrid" class="publication-grid art-grid"></div>
-      </section>
-
-      <section class="city-section">
-        <div class="section-head"><span>05</span><h2>FASHION CAPITALS</h2></div>
-        <div id="cityRail" class="city-rail"></div>
-      </section>
-
-      <section id="recentSection" class="feature-section hidden">
-        <div class="section-head"><span>06</span><h2>RECENTLY OPENED</h2><button id="clearRecents" class="text-btn">CLEAR</button></div>
-        <div id="recentStrip" class="recent-strip"></div>
-      </section>
-
-      <section class="route-section">
-        <div class="section-head"><span>07</span><h2>QUICK ROUTE</h2></div>
-        <div class="route-card">
-          <button data-route="runway">RUNWAY<span>01</span></button><i>→</i>
-          <button data-route="editorial">EDITORIAL<span>02</span></button><i>→</i>
-          <button data-route="street-style">STREET<span>03</span></button><i>→</i>
-          <button data-route="avant-garde">AVANT<span>04</span></button>
-        </div>
-        <p class="curation-note">Curated by editorial influence, cultural relevance and global reach. Not an objective ranking.</p>
-      </section>
+      <section class="hero"><p class="eyebrow">GLOBAL FASHION DIRECTORY</p><h1>FASHION<br><span>INDEX</span></h1><p class="hero-copy">The fashion magazines worth knowing. One tap away.</p><div class="hero-meta"><strong id="titleCount">0</strong> publications · <strong id="regionCount">0</strong> regions</div></section>
+      <section class="home-section"><div class="section-title"><span>01</span><h2>What do you want to see?</h2></div><div class="audience-grid"><button class="audience-card yellow" data-home-audience="men"><small>MENSWEAR</small><b>MEN</b><span>↗</span></button><button class="audience-card pink" data-home-audience="women"><small>WOMENSWEAR</small><b>WOMEN</b><span>↗</span></button><button class="audience-card blue" data-home-audience="mixed"><small>CROSSOVER</small><b>MIXED</b><span>↗</span></button><button class="audience-card cream" data-home-audience="all"><small>EVERYTHING</small><b>ALL</b><span>↗</span></button></div></section>
+      <section class="home-section"><div class="section-title"><span>02</span><h2>Essential reads</h2><button class="text-button" data-nav="browse">SEE ALL →</button></div><div id="essentialGrid" class="mag-grid compact-home"></div></section>
     </section>
-
-    <section id="exploreView" class="view">
-      <div class="explore-header">
-        <div><div class="hero-kicker">THE DIRECTORY</div><h2>EXPLORE</h2></div>
-        <button id="viewToggle" class="mini-btn">COMPACT VIEW</button>
-      </div>
-      <div id="activeRouteBanner" class="active-route-banner hidden"><div><small>CURATED ROUTE</small><b id="activeRouteName"></b><p id="activeRouteDesc"></p></div><button id="clearRoute" class="mini-btn">EXIT ROUTE ×</button></div>
-      <div class="audience-tabs" role="tablist" aria-label="Audience">
-        <button data-audience-filter="all" class="active">ALL</button>
-        <button data-audience-filter="men">MEN</button>
-        <button data-audience-filter="women">WOMEN</button>
-        <button data-audience-filter="mixed">MIXED</button>
-      </div>
-      <div class="search-wrap"><input id="searchInput" type="search" placeholder="Search publication, region, country, tag…" aria-label="Search publications"><span>⌕</span></div>
-      <div class="quick-chips" id="quickChips"></div>
-      <div class="filter-row">
-        <select id="tierFilter" aria-label="Filter by tier"><option value="all">All tiers</option><option>ICONS</option><option>AUTHORITIES</option><option>INDEPENDENT</option><option>DISCOVERY</option></select>
-        <select id="regionFilter" aria-label="Filter by region"><option value="all">All regions</option></select>
-        <select id="sortFilter" aria-label="Sort"><option value="curated">Curated</option><option value="az">A–Z</option><option value="recent">Recently opened</option><option value="favorites">Favorites first</option></select>
-      </div>
-      <div class="result-meta"><span id="resultCount"></span><button id="resetFilters" class="text-btn">RESET FILTERS</button></div>
-      <div id="exploreGrid" class="publication-grid art-grid"></div>
-      <div id="emptyState" class="empty-state hidden"><strong>NOTHING HERE YET.</strong><p>Try removing a filter. Fashion hates boxes anyway.</p></div>
-    </section>
-
-    <section id="favoritesView" class="view">
-      <div class="explore-header"><div><div class="hero-kicker">YOUR EDIT</div><h2>FAVORITES</h2></div><button id="clearFavorites" class="mini-btn">CLEAR ALL</button></div>
-      <div class="saved-note"><b>YOUR PERSONAL NEWSSTAND.</b><span>Save titles with ★. Everything stays on this device.</span></div>
-      <div id="favoritesGrid" class="publication-grid art-grid"></div>
-      <section id="notesSection" class="notes-section hidden"><div class="section-head"><span>✎</span><h2>INSPIRATION NOTES</h2><button id="clearNotes" class="text-btn">CLEAR NOTES</button></div><p class="section-deck">Tiny observations worth keeping: a silhouette, a crop, a color clash, a portrait idea.</p><div id="notesGrid" class="notes-grid"></div></section>
-      <div id="favoritesEmpty" class="empty-state"><strong>YOUR RACK IS EMPTY.</strong><p>Save publications with the star and build your own fashion press edit.</p><button class="cta" data-nav="explore">EXPLORE DIRECTORY</button></div>
-    </section>
-
-    <section id="aboutView" class="view">
-      <div class="about-wrap">
-        <div class="hero-kicker">ABOUT THIS OBJECT</div>
-        <h2>OPEN A MAGAZINE.<br>NOT ANOTHER ALGORITHM.</h2>
-        <p>FASHION INDEX is Alex’s curated gateway to official international fashion publications. It does not scrape, reproduce or host magazine content. Every title opens the publication’s official website.</p>
-        <div class="about-grid">
-          <article><b>CURATION</b><p>The order reflects editorial influence, cultural relevance and global reach. It is a point of view, not a scientific ranking.</p></article>
-          <article><b>PRIVACY</b><p>Favorites, recents, taste preferences and suggestions stay in your browser on this device. No account. No tracking database.</p></article>
-          <article><b>INSTALL</b><p>Android/Desktop: use INSTALL APP when supported. iPhone/iPad: Safari → Share → Add to Home Screen.</p></article>
-          <article><b>OFFLINE</b><p>The app shell can load offline. Magazine websites still require an internet connection.</p></article>
-        </div>
-        <div class="about-actions"><button id="aboutTasteBtn" class="cta">EDIT TASTE PROFILE</button><button id="suggestBtn" class="cta wild">SUGGEST A PUBLICATION +</button></div>
-      </div>
-    </section>
+    <section id="browseView" class="view"><div class="page-head"><div><p class="eyebrow">THE DIRECTORY</p><h2>BROWSE</h2></div><span id="resultCount" class="count-pill">0</span></div><div class="search-box"><input id="searchInput" type="search" autocomplete="off" placeholder="Search a magazine, country or style" aria-label="Search"><button id="clearSearch" aria-label="Clear search">×</button></div><div class="audience-tabs" aria-label="Audience filter"><button data-audience="all" class="active">ALL</button><button data-audience="men">MEN</button><button data-audience="women">WOMEN</button><button data-audience="mixed">MIXED</button></div><details class="filters" id="filterDetails"><summary>FILTERS <span id="filterBadge"></span></summary><div class="filter-fields"><label>Region<select id="regionFilter"><option value="all">All regions</option></select></label><label>Type<select id="typeFilter"><option value="all">All types</option></select></label><label>Sort<select id="sortFilter"><option value="rank">Most influential</option><option value="az">A to Z</option><option value="saved">Saved first</option></select></label></div><button id="resetFilters" class="reset-button">RESET FILTERS</button></details><div id="magazineGrid" class="mag-grid"></div><div id="emptyState" class="empty hidden"><b>NO RESULTS</b><p>Try another search or reset the filters.</p><button id="emptyReset" class="primary-button">RESET</button></div></section>
+    <section id="savedView" class="view"><div class="page-head"><div><p class="eyebrow">YOUR RACK</p><h2>SAVED</h2></div><span id="savedCount" class="count-pill">0</span></div><div id="savedGrid" class="mag-grid"></div><div id="savedEmpty" class="empty hidden"><b>NOTHING SAVED YET</b><p>Tap the star on any publication.</p><button class="primary-button" data-nav="browse">BROWSE</button></div></section>
   </main>
-
-  <nav class="bottom-nav" aria-label="Primary navigation">
-    <button data-nav="home" class="active"><span>⌂</span>HOME</button>
-    <button data-nav="explore"><span>✦</span>EXPLORE</button>
-    <button data-nav="favorites"><span>★</span>SAVED</button>
-    <button data-nav="about"><span>i</span>ABOUT</button>
-  </nav>
-
-  <dialog id="suggestDialog">
-    <form id="suggestForm" method="dialog">
-      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
-      <small>LOCAL NOTE / NO ACCOUNT</small><h3>SUGGEST A<br>PUBLICATION</h3>
-      <label>Name<input name="name" required></label>
-      <label>Official URL<input name="url" type="url" required placeholder="https://"></label>
-      <label>Region<input name="region" placeholder="Japan, France, Mexico…"></label>
-      <label>Audience<select name="audience"><option>Mixed</option><option>Men</option><option>Women</option></select></label>
-      <label>Why should it be here?<textarea name="note" rows="3"></textarea></label>
-      <button class="cta" value="default">SAVE LOCALLY</button>
-      <p id="suggestSuccess" class="success hidden">Saved on this device. Taste noted.</p>
-    </form>
-  </dialog>
-
-  <dialog id="tasteDialog" class="taste-dialog">
-    <form id="tasteForm" method="dialog">
-      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
-      <small>PERSONALIZE YOUR DAILY EDIT</small><h3>WHAT ARE YOU<br>LOOKING FOR?</h3>
-      <p class="dialog-deck">Choose as much as you want. This only changes your recommendations, never hides the full directory.</p>
-      <fieldset><legend>AUDIENCE</legend><div class="taste-options" id="tasteAudience"></div></fieldset>
-      <fieldset><legend>WHAT PULLS YOU IN?</legend><div class="taste-options" id="tasteTags"></div></fieldset>
-      <fieldset><legend>REGIONS TO WATCH</legend><div class="taste-options" id="tasteRegions"></div></fieldset>
-      <div class="taste-actions"><button type="button" id="resetTaste" class="mini-btn">RESET</button><button class="cta" value="default">SAVE MY TASTE</button></div>
-      <p id="tasteSuccess" class="success hidden">Taste profile saved. Your edit just got sharper.</p>
-    </form>
-  </dialog>
-
-
-  <dialog id="noteDialog" class="note-dialog">
-    <form id="noteForm" method="dialog">
-      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
-      <small>PERSONAL INSPIRATION NOTE</small><h3 id="noteTitle">NOTE</h3>
-      <input type="hidden" name="pubId" id="notePubId">
-      <label>What caught your eye?<textarea id="noteText" name="note" rows="7" maxlength="900" placeholder="Example: close crop + direct stare + black knit + hard side light…"></textarea></label>
-      <div class="note-actions"><button type="button" id="deleteNote" class="mini-btn danger">DELETE NOTE</button><button class="cta" value="default">SAVE NOTE</button></div>
-    </form>
-  </dialog>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="./app.js" defer></script>
+  <nav class="bottom-nav" aria-label="Primary navigation"><button data-nav="home" class="active"><span>⌂</span>HOME</button><button data-nav="browse"><span>⌕</span>BROWSE</button><button data-nav="saved"><span>★</span>SAVED</button></nav>
+  <dialog id="installDialog"><div class="dialog-card"><button class="dialog-close" id="closeInstall" aria-label="Close">×</button><p class="eyebrow">INSTALL FASHION INDEX</p><h3>Keep it on your home screen.</h3><div id="installInstructions"></div><button id="nativeInstallBtn" class="primary-button hidden">INSTALL NOW</button></div></dialog>
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="./data.js"></script><script src="./app.js" defer></script>
 </body>
 </html>
