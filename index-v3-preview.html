@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#211cff" />
+  <meta name="description" content="FASHION INDEX. The world's fashion press, one tap away." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FASHION INDEX" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>FASHION INDEX</title>
+</head>
+<body>
+  <div class="art-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+  <header class="topbar"><button class="brand" data-nav="home" aria-label="Home">FI<span>•</span></button><div class="topbar-actions"><button id="randomBtn" class="small-button">RANDOM ↗</button><button id="installBtn" class="small-button dark">INSTALL</button></div></header>
+  <main>
+    <section id="homeView" class="view active">
+      <section class="hero"><p class="eyebrow">GLOBAL FASHION DIRECTORY</p><h1>FASHION<br><span>INDEX</span></h1><p class="hero-copy">The fashion magazines worth knowing. One tap away.</p><div class="hero-meta"><strong id="titleCount">0</strong> publications · <strong id="regionCount">0</strong> regions</div></section>
+      <section class="home-section"><div class="section-title"><span>01</span><h2>What do you want to see?</h2></div><div class="audience-grid"><button class="audience-card yellow" data-home-audience="men"><small>MENSWEAR</small><b>MEN</b><span>↗</span></button><button class="audience-card pink" data-home-audience="women"><small>WOMENSWEAR</small><b>WOMEN</b><span>↗</span></button><button class="audience-card blue" data-home-audience="mixed"><small>CROSSOVER</small><b>MIXED</b><span>↗</span></button><button class="audience-card cream" data-home-audience="all"><small>EVERYTHING</small><b>ALL</b><span>↗</span></button></div></section>
+      <section class="home-section"><div class="section-title"><span>02</span><h2>Essential reads</h2><button class="text-button" data-nav="browse">SEE ALL →</button></div><div id="essentialGrid" class="mag-grid compact-home"></div></section>
+    </section>
+    <section id="browseView" class="view"><div class="page-head"><div><p class="eyebrow">THE DIRECTORY</p><h2>BROWSE</h2></div><span id="resultCount" class="count-pill">0</span></div><div class="search-box"><input id="searchInput" type="search" autocomplete="off" placeholder="Search a magazine, country or style" aria-label="Search"><button id="clearSearch" aria-label="Clear search">×</button></div><div class="audience-tabs" aria-label="Audience filter"><button data-audience="all" class="active">ALL</button><button data-audience="men">MEN</button><button data-audience="women">WOMEN</button><button data-audience="mixed">MIXED</button></div><details class="filters" id="filterDetails"><summary>FILTERS <span id="filterBadge"></span></summary><div class="filter-fields"><label>Region<select id="regionFilter"><option value="all">All regions</option></select></label><label>Type<select id="typeFilter"><option value="all">All types</option></select></label><label>Sort<select id="sortFilter"><option value="rank">Most influential</option><option value="az">A to Z</option><option value="saved">Saved first</option></select></label></div><button id="resetFilters" class="reset-button">RESET FILTERS</button></details><div id="magazineGrid" class="mag-grid"></div><div id="emptyState" class="empty hidden"><b>NO RESULTS</b><p>Try another search or reset the filters.</p><button id="emptyReset" class="primary-button">RESET</button></div></section>
+    <section id="savedView" class="view"><div class="page-head"><div><p class="eyebrow">YOUR RACK</p><h2>SAVED</h2></div><span id="savedCount" class="count-pill">0</span></div><div id="savedGrid" class="mag-grid"></div><div id="savedEmpty" class="empty hidden"><b>NOTHING SAVED YET</b><p>Tap the star on any publication.</p><button class="primary-button" data-nav="browse">BROWSE</button></div></section>
+  </main>
+  <nav class="bottom-nav" aria-label="Primary navigation"><button data-nav="home" class="active"><span>⌂</span>HOME</button><button data-nav="browse"><span>⌕</span>BROWSE</button><button data-nav="saved"><span>★</span>SAVED</button></nav>
+  <dialog id="installDialog"><div class="dialog-card"><button class="dialog-close" id="closeInstall" aria-label="Close">×</button><p class="eyebrow">INSTALL FASHION INDEX</p><h3>Keep it on your home screen.</h3><div id="installInstructions"></div><button id="nativeInstallBtn" class="primary-button hidden">INSTALL NOW</button></div></dialog>
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="./data.js"></script><script src="./app.js" defer></script>
+</body>
+</html>
