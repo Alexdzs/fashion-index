@@ -131,6 +131,7 @@
     const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
     const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
     const isAndroid = /android/i.test(navigator.userAgent);
+    $('#androidApkOption').classList.toggle('hidden', !isAndroid);
     if (standalone) $('#installBtn').textContent = 'INSTALLED';
     window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredInstall = e; if (!standalone) $('#installBtn').textContent = 'INSTALL'; });
     $('#installBtn').addEventListener('click', () => {
